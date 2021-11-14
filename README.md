@@ -2,7 +2,7 @@
 
 **Description**
 
-In this application, I will attempt to build a full-stack web application for users to participate in a regular season NFL football tournament pool. I will build the application utilizing Java and PostgreSQL for the back end and HTML, CSS, and Vue.js on the front end.
+In this application, I am attempting to build a full-stack web application for users to participate in a regular season NFL football tournament pool. I will build the application utilizing Java and PostgreSQL for the back end and HTML, CSS, and Vue.js on the front end.
 
 **Status**
 
