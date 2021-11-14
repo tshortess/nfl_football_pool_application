@@ -8,7 +8,6 @@ In this application, I will attempt to build a full-stack web application for us
 
 Work-in-progress: early stage
 
-**Back End**
 Database
 1. Database schema complete with initial teams populated. Team IDs and names match ESPN.com team IDs.
   a. Need to create a file (.sh) to run database setup and guide user through setup of database.
