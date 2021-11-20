@@ -1,4 +1,10 @@
-package com.example.nfl_app.Dao;
+package com.example.nfl_app.dao;
 
-public class JdbcUserPickDao {
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JdbcUserPickDao implements UserPickDao {
+    private JdbcTemplate jdbcTemplate;
+
 }

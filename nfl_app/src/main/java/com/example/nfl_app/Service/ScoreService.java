@@ -1,4 +1,4 @@
-package com.example.nfl_app.Service;
+package com.example.nfl_app.service;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;

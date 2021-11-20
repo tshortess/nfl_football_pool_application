@@ -23,6 +23,13 @@ CREATE TABLE team (
     CONSTRAINT pk_tournament_team PRIMARY KEY (team_id)
 );
 
+CREATE TABLE pool (
+    user_id INT,
+    pool_id INT,
+    
+    CONSTRAINT fk_tournament_pick_user FOREIGN KEY (user_id) REFERENCES user_table(user_id)
+);
+
 CREATE TABLE game (
     game_id SERIAL,
     game_week SMALLINT NOT NULL,

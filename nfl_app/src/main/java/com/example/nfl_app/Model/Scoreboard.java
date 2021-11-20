@@ -1,4 +1,4 @@
-package com.example.nfl_app.Model;
+package com.example.nfl_app.model;
 
 public class Scoreboard {
 
