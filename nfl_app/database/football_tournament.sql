@@ -2,6 +2,7 @@ CREATE DATABASE football_tournament;
 
 /*drop table user_pick;
 drop table game;
+drop table pool;
 drop table team;
 drop table user_table;
 Used to drop and restart tables if schema changes.*/
