@@ -10,8 +10,8 @@ Work-in-progress: early stage
 
 **Database**
 
-- Database schema complete with initial teams populated, which can be found in the nfl_app/database folder. Team IDs and names match ESPN.com team IDs.
-  - Need to create a file (.sh) to run database setup and guide user through setup of database.
+- Database schema mostly complete with initial teams populated, which can be found in the nfl_app/database folder. Team IDs and names match ESPN.com team IDs.
+  - Need to guide user through setup of database.
   - Give further consideration to database entry datatypes and restrictions. Should also figure out priviliges limitations.
 
 **Model/Controller - Back End**
