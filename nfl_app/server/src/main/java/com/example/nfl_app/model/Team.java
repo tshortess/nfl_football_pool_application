@@ -4,7 +4,6 @@ public class Team {
 
     private String teamName;
     private int id;
-    private String abbrev;
 
     public String getTeamName() {
         return teamName;
@@ -22,11 +21,4 @@ public class Team {
         this.id = id;
     }
 
-    public String getAbbrev() {
-        return abbrev;
-    }
-
-    public void setAbbrev(String abbrev) {
-        this.abbrev = abbrev;
-    }
 }

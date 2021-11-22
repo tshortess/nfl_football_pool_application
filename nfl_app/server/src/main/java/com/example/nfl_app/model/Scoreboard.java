@@ -4,8 +4,9 @@ public class Scoreboard {
 
     private int eventId;
     private int week;
-    private Team homeTeam;
-    private Team awayTeam;
+    private int year;
+    private int homeTeamId;
+    private int awayTeamId;
     private int homeScore;
     private int awayScore;
     private boolean isCompleted;
@@ -26,20 +27,28 @@ public class Scoreboard {
         this.eventId = eventId;
     }
 
-    public Team getHomeTeam() {
-        return homeTeam;
+    public int getYear() {
+        return year;
     }
 
-    public void setHomeTeam(Team homeTeam) {
-        this.homeTeam = homeTeam;
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    public Team getAwayTeam() {
-        return awayTeam;
+    public int getHomeTeamId() {
+        return homeTeamId;
     }
 
-    public void setAwayTeam(Team awayTeam) {
-        this.awayTeam = awayTeam;
+    public void setHomeTeamId(int homeTeamId) {
+        this.homeTeamId = homeTeamId;
+    }
+
+    public int getAwayTeamId() {
+        return awayTeamId;
+    }
+
+    public void setAwayTeamId(int awayTeamId) {
+        this.awayTeamId = awayTeamId;
     }
 
     public int getHomeScore() {
