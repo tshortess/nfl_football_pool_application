@@ -30,3 +30,4 @@ Work-in-progress: early stage
   - Upcoming matches
   - Pick selection
   - Current standings relative to other users
+  - Pool owner admin approval of users in pools
