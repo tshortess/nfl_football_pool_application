@@ -1,11 +1,15 @@
 CREATE DATABASE football_tournament;
 
-/*DROP TABLE IF EXISTS user_pick;
+/*Use to drop and restart tables if schema changes.
+
+DROP TABLE IF EXISTS user_pick;
 DROP TABLE IF EXISTS game;
+DROP TABLE IF EXISTS user_pool;
 DROP TABLE IF EXISTS pool;
 DROP TABLE IF EXISTS team;
 DROP TABLE IF EXISTS user_table;
-Used to drop and restart tables if schema changes.*/
+
+*/
 
 CREATE TABLE user_table (
     user_id SERIAL,
@@ -25,13 +29,22 @@ CREATE TABLE team (
 );
 
 CREATE TABLE pool (
+    pool_id SERIAL,
+    pool_name VARCHAR(50) NOT NULL UNIQUE,
+    
+    CONSTRAINT pk_tournament_pool PRIMARY KEY (pool_id)
+);
+
+CREATE TABLE user_pool (
     user_id INT,
     pool_id INT,
     wins DECIMAL(10, 1),
     losses INT,
     
     CONSTRAINT fk_tournament_pick_user FOREIGN KEY (user_id) REFERENCES user_table(user_id),
-    CONSTRAINT pk_tournament_pool PRIMARY KEY (pool_id, user_id)
+    CONSTRAINT fk_tournament_pool_id FOREIGN KEY (pool_id) REFERENCES pool(pool_id),
+    CONSTRAINT pk_tournament_user_pool PRIMARY KEY (pool_id, user_id)
+
 );
 
 CREATE TABLE game (

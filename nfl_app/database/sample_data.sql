@@ -12,7 +12,10 @@ VALUES ('first_person', 'first_person@madeup.com', 'qoiwjeoiqjweojqe'),
        ('lmdpok_person', 'first_person@madeup.com', 'qoiwjeoiqjweojqe'),
        ('wmdpodm_person', 'first_person@madeup.com', 'qoiwjeoiqjweojqe');
 
-INSERT INTO pool (user_id, pool_id)
+INSERT INTO pool (pool_name)
+VALUES ('Pool-1'), ('Pool-2');
+
+INSERT INTO user_pool (user_id, pool_id)
 VALUES ((SELECT user_id FROM user_table WHERE username = 'first_person'), 1),
        ((SELECT user_id FROM user_table WHERE username = 'second_person'), 1),
        ((SELECT user_id FROM user_table WHERE username = 'qwemlkm'), 1),
@@ -147,15 +150,16 @@ SET winning_team_id = CASE WHEN away_team_score < home_team_score THEN home_team
 WHERE winning_team_id IS NULL AND home_team_score IS NOT NULL AND away_team_score IS NOT NULL;
 
 --update user records
-UPDATE pool 
+UPDATE user_pool 
 SET wins = 
         (SELECT COUNT(*) FROM user_pick 
         INNER JOIN game ON game.game_id = user_pick.game_id
-        WHERE pick_id = game.winning_team_id AND game.winning_team_id IS NOT NULL AND pool.user_id = user_pick.user_id) + 
+        WHERE pick_id = game.winning_team_id AND game.winning_team_id IS NOT NULL AND user_pool.user_id = user_pick.user_id) + 
         (0.5 * (SELECT COUNT(*) FROM user_pick 
         INNER JOIN game ON game.game_id = user_pick.game_id
-        WHERE home_team_score IS NOT NULL AND away_team_score IS NOT NULL AND game.winning_team_id IS NULL AND pool.user_id = user_pick.user_id AND (user_pick.pick_id = home_team_id OR user_pick.pick_id = away_team_id))), 
+        WHERE home_team_score IS NOT NULL AND away_team_score IS NOT NULL AND game.winning_team_id IS NULL AND user_pool.user_id = user_pick.user_id AND (user_pick.pick_id = home_team_id OR user_pick.pick_id = away_team_id))), 
     losses = 
         (SELECT COUNT(*) FROM user_pick 
         INNER JOIN game ON game.game_id = user_pick.game_id
-        WHERE pick_id != game.winning_team_id AND game.winning_team_id IS NOT NULL AND pool.user_id = user_pick.user_id);
+        WHERE pick_id != game.winning_team_id AND game.winning_team_id IS NOT NULL AND user_pool.user_id = user_pick.user_id);
+        
